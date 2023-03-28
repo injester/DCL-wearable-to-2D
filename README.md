@@ -3,6 +3,14 @@ Uploading a 3D wearable to blender and then use a script to get pictures of all 
 
 This Python script automates the process of setting up and rendering images from four different camera angles with six area lights. It also creates the render directory if it doesn't exist and saves the rendered images to disk.
 
+The requirements for running this script are as follows:
+
+Blender - The script is intended to be run within Blender, so you will need to have Blender installed on your system. The script was written and tested on Blender 2.92, but it should work on other versions as well.
+
+OpenCV - The script does not require OpenCV or any other external libraries to run.
+
+Sufficient system resources - Depending on the complexity of the scene you want to render, you may need a powerful CPU and/or GPU, as well as enough memory to handle the rendering process.
+
 To use the script, follow these steps:
 
 1. Open Blender and create or open a scene that you want to render.
