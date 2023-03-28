@@ -6,9 +6,9 @@ This script is designed to convert a 3D model into a 2D image from multiple angl
 
 To use this script, you will need to have Blender installed on your computer. You can download Blender for free from the [Blender website](https://www.blender.org/download/).
 
-## Tutorial video
-[Youtube: Converting 3D Models to 2D Textures for Decentraland Wearables with Blender]
-(https://youtu.be/mofqXaKx818).
+## Tutorial Video
+
+Watch our tutorial video on YouTube to see how to use the 2D Converter for Decentraland Wearables: [Converting 3D Models to 2D Textures for Decentraland Wearables with Blender](https://youtu.be/mofqXaKx818).
 
 ## Usage
 
