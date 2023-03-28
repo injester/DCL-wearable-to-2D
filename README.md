@@ -6,6 +6,10 @@ This script is designed to convert a 3D model into a 2D image from multiple angl
 
 To use this script, you will need to have Blender installed on your computer. You can download Blender for free from the [Blender website](https://www.blender.org/download/).
 
+## Tutorial video
+[Youtube: Converting 3D Models to 2D Textures for Decentraland Wearables with Blender]
+(https://youtu.be/mofqXaKx818).
+
 ## Usage
 
 1. Open Blender and load the 3D model you want to convert into a 2D image.
@@ -29,5 +33,3 @@ You can customize the script to suit your needs by modifying the following varia
 ## License
 
 This script is licensed under the [MIT License](https://opensource.org/licenses/MIT). You are free to use and modify it for personal or commercial purposes.
-
-https://youtu.be/mofqXaKx818
