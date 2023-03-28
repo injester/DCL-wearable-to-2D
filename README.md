@@ -1,38 +1,31 @@
-# DCL-wearable-to-2D
-Uploading a 3D wearable to blender and then use a script to get pictures of all 4 sides.
+# 2D Converter for Decentraland Wearables
 
-This Python script automates the process of setting up and rendering images from four different camera angles with six area lights. It also creates the render directory if it doesn't exist and saves the rendered images to disk.
+This script is designed to convert a 3D model into a 2D image from multiple angles, which can be used as a texture for a Decentraland wearable. It automatically sets up cameras and lighting for the scene, and saves the rendered images to disk.
 
-The requirements for running this script are as follows:
+## Installation
 
-Blender - The script is intended to be run within Blender, so you will need to have Blender installed on your system. The script was written and tested on Blender 2.92, but it should work on other versions as well.
+To use this script, you will need to have Blender installed on your computer. You can download Blender for free from the [Blender website](https://www.blender.org/download/).
 
-OpenCV - The script does not require OpenCV or any other external libraries to run.
+## Usage
 
-Sufficient system resources - Depending on the complexity of the scene you want to render, you may need a powerful CPU and/or GPU, as well as enough memory to handle the rendering process.
+1. Open Blender and load the 3D model you want to convert into a 2D image.
+2. Open the Scripting workspace in Blender by selecting it from the top menu.
+3. Open a new text editor window by selecting it from the bottom menu.
+4. Add your GLB file in the middle to blender.
+5. Copy and paste the code from `2D Converter.py` into the text editor window.
+6. Press the "Run Script" button or press `Alt + P` on your keyboard to run the script.
+7. The script will automatically set up cameras and lighting for the scene, render the images, and save them to disk in a folder called "2D Render" on your `C:` drive. The rendered images will be saved with the names `camera_f-image.png`, `camera_b-image.png`, `camera_r-image.png`, and `camera_l-image.png`.
+8. Once the images have been rendered, you can use them as a texture for your Decentraland wearable.
 
-To use the script, follow these steps:
+## Customization
 
-1. Open Blender and create or open a scene that you want to render.
-2. Open the Scripting workspace in Blender.
-3. Create a new text block and paste the code into it.
-4. Edit the render_path variable to the desired path where the rendered images will be saved.
-5. Import the wearable as GLB 
-6. Run the script.
+You can customize the script to suit your needs by modifying the following variables:
 
-The pictures will be saved in the directory specified by the render_path variable in the script.
+- `light_size`: The size of the area lights. Increase this value to make the lighting more diffuse, or decrease it to make the lighting more focused.
+- `render_path`: The directory where the rendered images will be saved. By default, the images will be saved in a folder called "2D Render" on your `C:` drive.
+- `camera_name`: The names of the cameras used to render the scene. By default, the script sets up four cameras: `Camera_F`, `Camera_B`, `Camera_R`, and `Camera_L`. You can change these names to whatever you like, but make sure to update them in the script as well.
+- `device_type`: The type of device used to render the images. By default, the script uses the CPU (`'CPU'`), but you can switch to the GPU (`'CUDA'`) by changing this variable.
 
-By default, the script sets render_path to "C:/2D Render". Therefore, the rendered images will be saved in the "2D Render" folder on the C drive (assuming you're using a Windows operating system).
+## License
 
-If the specified directory doesn't exist, the script will create it automatically before saving the images.
-
-The images will be named based on the name of the camera they were rendered from. For example, the image rendered from the 'Camera_F' will be named 'camera_f-image.png'.
-
-The script will create four cameras and six area lights if they don't already exist in the scene. It will then set the locations and rotations of the cameras and the lights, and set up the render settings.
-
-After that, the script will render the images from each camera, save the images to disk in the specified render directory, and print the file paths to the console.
-
-Finally, the script will remove the cameras and lights from the scene.
-
-Note: The script assumes that you are using CPU for rendering. If you want to use GPU instead, you need to edit the line 'bpy.context.scene.cycles.device = 'CPU'' to 'bpy.context.scene.cycles.device = 'GPU'' and set the device type to GPU in the Blender user preferences.
-
+This script is licensed under the [MIT License](https://opensource.org/licenses/MIT). You are free to use and modify it for personal or commercial purposes.
