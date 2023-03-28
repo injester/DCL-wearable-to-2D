@@ -29,3 +29,5 @@ You can customize the script to suit your needs by modifying the following varia
 ## License
 
 This script is licensed under the [MIT License](https://opensource.org/licenses/MIT). You are free to use and modify it for personal or commercial purposes.
+
+https://youtu.be/mofqXaKx818
