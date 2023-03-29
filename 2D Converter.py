@@ -99,27 +99,38 @@ render_path = "C:/2D Render"
 if not os.path.exists(render_path):
     os.makedirs(render_path)
 
+# Get the subdirectories in the render directory
+subdirs = next(os.walk(render_path))[1]
+
+# Determine the new subdirectory name
+if '1' not in subdirs:
+    subdir_name = '1'
+else:
+    i = 2
+    while str(i) in subdirs:
+        i += 1
+    subdir_name = str(i)
+
+# Create the new subdirectory
+subdir_path = os.path.join(render_path, subdir_name)
+os.makedirs(subdir_path)
+
 # Render the images from each camera
 for camera_name in ['Camera_F', 'Camera_B', 'Camera_R', 'Camera_L']:
     # Set the active camera
     bpy.context.scene.camera = bpy.data.objects[camera_name]
-    
-    # Render the image
-    bpy.ops.render.render()
-    
-    # Save the image to disk
-    file_path = os.path.join(render_path, '{}-image.png'.format(camera_name.lower()))
-    bpy.data.images['Render Result'].save_render(file_path)
-    
+
     # Set the output file path
-    bpy.context.scene.render.filepath = os.path.join(render_path, '{}-image.png'.format(camera_name.lower()))
-    
+    file_path = os.path.join(subdir_path, '{}-image.png'.format(camera_name.lower()))
+    bpy.context.scene.render.filepath = file_path
+
     # Render the image and write to disk
     bpy.ops.render.render(write_still=True)
 
-    # Print the file Path
+    # Print the file path
     print("Output Path:", bpy.context.scene.render.filepath)
 
+# Remove the cameras and lights
 for obj in bpy.context.scene.objects:
     if obj.name.startswith('Camera_') or obj.name.startswith('Light_'):
         bpy.data.objects.remove(obj, do_unlink=True)
