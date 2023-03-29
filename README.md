@@ -18,7 +18,7 @@ Watch our tutorial video on YouTube to see how to use the 2D Converter for Decen
 4. Add your GLB file in the middle to blender.
 5. Copy and paste the code from `2D Converter.py` into the text editor window.
 6. Press the "Run Script" button or press `Alt + P` on your keyboard to run the script.
-7. The script will automatically set up cameras and lighting for the scene, render the images, and save them to disk in a folder called "2D Render" on your `C:` drive. The rendered images will be saved with the names `camera_f-image.png`, `camera_b-image.png`, `camera_r-image.png`, and `camera_l-image.png`.
+7. The script will automatically set up cameras and lighting for the scene, render the images, and save them to disk in a folder called "2D Render" on your `C:` drive. The rendered images will be saved in a folder for each render with the file names being `camera_f-image.png`, `camera_b-image.png`, `camera_r-image.png`, and `camera_l-image.png`.
 8. Once the images have been rendered, you can use them as a texture for your Decentraland wearable.
 
 ## Customization
