@@ -99,8 +99,13 @@ render_path = "C:/2D Render"
 if not os.path.exists(render_path):
     os.makedirs(render_path)
 
-# Get the subdirectories in the render directory
-subdirs = next(os.walk(render_path))[1]
+# Create the characters directory if it doesn't exist
+characters_path = os.path.join(render_path, "characters")
+if not os.path.exists(characters_path):
+    os.makedirs(characters_path)
+
+# Get the subdirectories in the characters directory
+subdirs = next(os.walk(characters_path))[1]
 
 # Determine the new subdirectory name
 if '1' not in subdirs:
@@ -112,7 +117,7 @@ else:
     subdir_name = str(i)
 
 # Create the new subdirectory
-subdir_path = os.path.join(render_path, subdir_name)
+subdir_path = os.path.join(characters_path, subdir_name)
 os.makedirs(subdir_path)
 
 # Render the images from each camera
